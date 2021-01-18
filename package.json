@@ -1,0 +1,25 @@
+{
+  "name": "sankas-spices",
+  "version": "1.0.0",
+  "description": "This project is a simple webpage about spices made by a Sri Lankan family. This project is a charity project, to help collecting money for families in Sri Lanka, who are suffering from the consequences of Covid-19.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-styles": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 styles.sass dist/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaneMcBrain/sankas-spices.git"
+  },
+  "author": "Janine Semmler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaneMcBrain/sankas-spices/issues"
+  },
+  "homepage": "https://github.com/JaneMcBrain/sankas-spices#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^5.0.0"
+  }
+}
