@@ -6,14 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link href="dist/styles.css" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <h1 class="header__title">Sankas</h1>
+  <header class="header grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="header__top cell small-12">Sri Lanka</div>
+      <div class="header__center cell small-12">
+        <span class="header__title">Sankas</span>
+        <span class="header__img"></span>
+        <span class="header__title header__title--right">Spices</span>
+      </div>
+    </div>
   </header>
-  <main>
-    
+  <main class="content grid-container">
+    <div class="grid-x">
+      <p class="cell small-10 small-offset-1 medium-8 medium-offset-2 text-center intro-text">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </div>
+    <div class="spice-content">
+      <img src="dist/img/plant1.svg" class="spice-content__image spice-content__image--left">
+      <h2 class="spice-content__title">Senf Pulver</h2>
+      <p></p>
+    </div>
+    <div class="spice-content">
+      <img src="dist/img/plant2.svg" class="spice-content__image spice-content__image--right">
+      <h2 class="spice-content__title">Curry Pulver</h2>
+      <p></p>
+    </div>
+    <div class="spice-content">
+      <img src="dist/img/plant3.svg" class="spice-content__image spice-content__image--left">
+      <h2 class="spice-content__title">Kurkuma</h2>
+      <p></p>
+    </div>
   </main>
 </body>
 </html>
