@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link href="dist/styles.css" rel="stylesheet">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <header class="header grid-container">
@@ -15,31 +16,78 @@
       <div class="header__top cell small-12">Sri Lanka</div>
       <div class="header__center cell small-12">
         <span class="header__title">Sankas</span>
-        <span class="header__img"></span>
+        <span class="header__img image-circle image-circle--sanka"></span>
         <span class="header__title header__title--right">Spices</span>
       </div>
     </div>
   </header>
-  <main class="content grid-container">
-    <div class="grid-x">
-      <p class="cell small-10 small-offset-1 medium-8 medium-offset-2 text-center intro-text">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-      </p>
+  <main>
+    <p class="intro-text">
+      Liebe Freunde,<br>auch Sri Lanka steckt in einer großen humanitären Krise seit Corona wütet. Hier seht ihr ein Hilfsprojekt ohne einfach Geld zu sammeln.
+      <b>Kauft eure Gewürze direkt & in guter Qualität. </b><span>Die unten angegebenen Preise zahlt Sanka direkt an die Gewürzverkäuferin, der Aufpreis von 20€ pro 500g geht dann an Sanka.</span>
+      <br><br><b>Wer ist Sanka? </b><span>Lest die Geschichte, in der wir auch erklären warum wir das ganze machen, für wen und wie schön Sri Lanka ist. 
+        Obwohl Porto und Auslandsüberweisungskosten noch on top kommen, liegt ihr unter dem handelsüblichen Preisen in Deutschland, habt aber geile, frische Gewürze bei denen euer Geld direkt an die Menschen vor Ort geht und ihr somit zu 100% unterstützt.</span>
+      <br><br><b>Wie kann ich das garantieren? </b><span>Indem ihr es Sanka gleich selbst überweist. </span>
+      <br><br><b>Warum tue ich das dann? </b><span>Weil es unser Freund ist und er in Not ist.</span>
+      <br><br><i>Zur Story ...</i>
+    </p>
+    <div class="spice-content spice-content--right">
+      <img src="dist/img/plant1.svg" class="spice-content__image">
+      <h2 class="spice-content__title">Gewürze</h2>
+      <div class="spice-content__text">
+        <div class="spice-table">
+        </div>
+      </div>
     </div>
-    <div class="spice-content">
-      <img src="dist/img/plant1.svg" class="spice-content__image spice-content__image--left">
-      <h2 class="spice-content__title">Senf Pulver</h2>
-      <p></p>
+    <div class="spice-content spice-content--left">
+      <img src="dist/img/plant3.svg" class="spice-content__image">
+      <h2 class="spice-content__title">Bestellung</h2>
+      <div class="spice-content__text">
+        <p>In der Gewürztabelle findet ihr das Sortiment und die entsprechenden Preise pro Paket. Auf den jeweiligen Pakettpreis kommen noch 20€ extra an Sanka, damit er seine Familie versorgen kann. Hier ein kleines Beispiel: Du möchtest 500g Meat Curry Powder bestellen, dann kostet das Paket ca. 24,95€. Bitte bedenke auch, dass die Preise aufgrund der inflationären Lage in Sri Lanka jederzeit schwanken. Wenn du die Bestellung bei Sanka aufgibst, wird er dir einen finalen Preis nennen.</p>
+        <p>Schreibt Sanka gerne direkt eine WhatsApp mit eurer Bestellung. Ihr könnt 500g oder 1000g bestellen. Solltet ihr Gewürze benötigen die noch nicht aufgeführt sind fragt bitte nach, wir erweitern das Sortiment gerne. Sanka erreicht ihr unter der <a href="tel:+94774635348">+94 77 463 5348</a>.</p>
+      </div>
     </div>
-    <div class="spice-content">
-      <img src="dist/img/plant2.svg" class="spice-content__image spice-content__image--right">
-      <h2 class="spice-content__title">Curry Pulver</h2>
-      <p></p>
-    </div>
-    <div class="spice-content">
-      <img src="dist/img/plant3.svg" class="spice-content__image spice-content__image--left">
-      <h2 class="spice-content__title">Kurkuma</h2>
-      <p></p>
+    <div class="spice-content spice-content--right">
+      <img src="dist/img/plant2.svg" class="spice-content__image">
+      <h2 class="spice-content__title">Bezahlung</h2>
+      <div class="spice-content__text">
+        <div id="payment">
+          <p>Nachdem Sanka dir die Bestellung bestätigt hat, kannst du einfach den Betrag entweder per Paylpal direkt an Sanka schicken. Oder du überweist diesen an mich, Aline Lutz, und ich leite den Betrag entsprechend weiter.</p>
+          <button type="button" class="secondary button">per Paypal</button>
+          <button type="button" class="secondary button">per Überweisung</button>
+        </div>
+        <div id="paypal">
+          <h3 class="h4">Bezahlung per PayPal</h3>
+          <ul class="payment-steps">
+            <li>Einloggen bei PayPal, unter "Übersicht" auf "Senden" klicken</li>
+            <li>"Geld an ein Bankkonto senden, in über 90 Ländern" auswählen</li>
+            <li>Automatischer Wechsel auf Xoom, wähle als Land Sri Lanka</li>
+            <li>Gebe deinen Betrag ein und drücke auf weiter</li>
+            <li>Bei Optionen für den Erhalt, drücke auf Banküberweisung</li>
+            <li>Nun gibst du Sanka's Daten ein (siehe Kontakt & Bankdetails)</li>
+            <li>Drücke auf Speichern und weiter zur Zahlung</li>
+            <li>Dann wählst du deine Einstellungen aus</li>
+            <li>Am Ende einmal speichern und bestätigen - Geschafft!</li>
+          </ul>
+          <div class="payment-details">
+            <div>
+              <b class="h4 payment-details__title">Kontakt</b>
+              <p>Sanka Kumara</p>
+              <p>Adresse 1: Dalawella</p>
+              <p>Adresse 2: Sihina</p>
+              <p>Bezirk: Unawatuna - Provinz Galle</p>
+              <p><b>Telefon:</b> +94 77 46 35 34 8</p>
+              <p><b>E-Mail:</b> sankakuma123@gmail.com</p>
+            </div>
+            <div>
+              <b class="h4 payment-details__title">Bank Details</b>
+              <p><b>Bankname:</b> Nations Trust Bank PLC</p>
+              <p><b>Bankleizahl:</b> 7162</p>
+              <p><b>Kontonummer:</b> 200890040135</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </body>
