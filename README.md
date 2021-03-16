@@ -10,4 +10,8 @@ This project is a simple webpage about spices made by a Sri Lankan family. This 
 * HTML5
 * JavaScript
 
-## Setup
+## SASS Setup
+1. npm install
+2. npm run-script compile-styles
+
+The CSS files will be compiled into the dist folder.
