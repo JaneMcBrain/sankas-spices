@@ -1,0 +1,149 @@
+// POSITIONING ________________________________________
+=position($top, $left, $right, $bottom)
+  @if $top != undefined
+    top: $top
+  @if $bottom != undefined
+    bottom: $bottom
+  @if $left != undefined
+    left: $left
+  @if $right != undefined
+    right: $right
+
+=absolute($top: undefined, $left: undefined, $right: undefined, $bottom: undefined)
+  position: absolute
+  +position($top, $left, $right, $bottom)
+
+=fixed($top: undefined, $left: undefined, $right: undefined, $bottom: undefined)
+  position: fixed
+  +position($top, $left, $right, $bottom)
+
+=relative($top: undefined, $left: undefined, $right: undefined, $bottom: undefined)
+  position: relative
+  +position($top, $left, $right, $bottom)
+
+=absolute-all-0
+  +absolute($top: 0, $right: 0, $bottom: 0, $left: 0)
+
+// FLEXBOX _____________________________________________
+=flexbox
+  display: -webkit-box
+  display: -moz-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+
+=flex-direction($value: row) 
+  @if $value == row-reverse 
+    -webkit-box-direction: reverse
+    -webkit-box-orient: horizontal
+    -moz-box-direction: reverse
+    -moz-box-orient: horizontal
+  @else if $value == column 
+    -webkit-box-direction: normal
+    -webkit-box-orient: vertical
+    -moz-box-direction: normal
+    -moz-box-orient: vertical
+  @else if $value == column-reverse 
+    -webkit-box-direction: reverse
+    -webkit-box-orient: vertical
+    -moz-box-direction: reverse
+    -moz-box-orient: vertical
+  @else 
+    -webkit-box-direction: normal
+    -webkit-box-orient: horizontal
+    -moz-box-direction: normal
+    -moz-box-orient: horizontal
+
+  -webkit-flex-direction: $value
+  -ms-flex-direction: $value
+  flex-direction: $value
+
+=flex-wrap($value: nowrap)
+  // No Webkit/FF Box fallback.
+  -webkit-flex-wrap: $value
+  @if $value == nowrap
+    -ms-flex-wrap: none
+  @else
+    -ms-flex-wrap: $value
+
+  flex-wrap: $value
+
+=flex($fg: 1, $fs: 0, $fb: auto)
+
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg
+
+  // Box-Flex only supports a flex-grow value so lets grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list'
+    $fg-boxflex: nth($fg, 1)
+
+  -webkit-box: $fg-boxflex
+  -moz-box: $fg-boxflex
+  -webkit-flex: $fg $fs $fb
+  -ms-flex: $fg $fs $fb
+  flex: $fg $fs $fb
+
+=align-items($value: stretch)
+  @if $value == flex-start
+    -webkit-box-align: start
+    -moz-box-align: start
+    -ms-flex-align: start
+  @else if $value == flex-end
+    -webkit-box-align: end
+    -moz-box-align: end
+    -ms-flex-align: end
+  @else
+    -webkit-box-align: $value
+    -moz-box-align: $value
+    -ms-flex-align: $value
+
+  -webkit-align-items: $value
+  align-items: $value
+
+
+=justify-content($value: flex-start)
+  @if $value == flex-start
+    -webkit-box-pack: start
+    -moz-box-pack: start
+    -ms-flex-pack: start
+  @else if $value == flex-end
+    -webkit-box-pack: end
+    -moz-box-pack: end
+    -ms-flex-pack: end
+  @else if $value == space-between
+    -webkit-box-pack: justify
+    -moz-box-pack: justify
+    -ms-flex-pack: justify
+  @else if $value == space-around
+    -ms-flex-pack: distribute
+  @else
+    -webkit-box-pack: $value
+    -moz-box-pack: $value
+    -ms-flex-pack: $value
+  
+  -webkit-justify-content: $value
+  justify-content: $value
+
+=align-self($value: auto)
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value
+  @if $value == flex-start 
+    -ms-flex-item-align: start
+  @else if $value == flex-end 
+    -ms-flex-item-align: end
+  @else
+    -ms-flex-item-align: $value
+  
+  align-self: $value
+
+=breakpoint($device)
+  @if $device == "desktop"
+    @media only screen and (max-width: 1199px)
+      @content
+  @if $device == "tablet"
+    @media only screen and (max-width: 959px)
+      @content
+  @else if $device == "phone"
+    @media only screen and (max-width: 639px)
+      @content
