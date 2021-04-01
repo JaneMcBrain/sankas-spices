@@ -21,15 +21,29 @@ body
   text-align: center
   font-family: 'Gishella', Helvetica, Tahoma, sans-serif
 
+  &__plants
+    +absolute
+    z-index: -1
+
+    &--left
+      left: -150px
+      top: -86px
+      transform: rotate(-45deg)
+
+    &--right
+      right: -165px
+      top: -73px
+      transform: rotate(45deg)
+
   &__top
     font-size: 32px
     margin-top: 16px
     margin-bottom: 16px
 
   &__center
-    display: flex
-    align-items: center
-    justify-content: center
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
   
   &__title
     font-size: 64px
@@ -40,6 +54,36 @@ body
   &__img
     margin-right: 32px
     margin-left: 32px
+  
+  +breakpoint(tablet)
+    &__top
+      margin-top: 32px
+      font-size: 24px
+
+    &__title
+      font-size: 40px
+    
+    &__plants
+      width: 400px
+
+      &--left
+        left: -137px
+        top: -66px
+        transform: rotate(-54deg)
+      
+      &--right
+        top: -52px
+        transform: rotate(54deg)
+  
+  +breakpoint(tablet)
+    &__center
+      +flex-direction(column)
+    
+    &__title--right
+      margin-right: 0
+
+    &__img
+      margin: 16px 0
 
 .image-circle
   display: inline-block
@@ -49,24 +93,33 @@ body
   border: $border-style
   background-position: center
   background-size: contain
+  background-repeat: no-repeat
   box-shadow: 0px 1px 13px 0px #6e6e6e
 
   &--sanka
     background-image: url('img/sanka.jpg')
-  &--plant-1
-    background-image: url('img/plant1.svg')
-  &--plant-2
-    background-image: url('img/plant2.svg')
-  &--plant-3
-    background-image: url('img/plant3.svg')
+  
+  +breakpoint(tablet)
+    width: 200px
+    height: 200px
 
 .intro-text
   width: 66%
-  margin: 64px auto
+  margin-right: auto
+  margin-left: auto
   padding: 32px
   border: $border-style
   font-size: 18px
   background-color: $light
+
+  +breakpoint(tablet)
+    width: 85%
+
+  +breakpoint(phone)
+    width: auto
+    padding: 16px
+    margin-right: 8px
+    margin-left: 8px
 
 .spice-content
   +relative
@@ -125,6 +178,32 @@ body
   &__image
     width: 300px
     position: absolute
+    z-index: -1
+  
+  +breakpoint(phone)
+    &--left
+      .spice-content__text
+        padding-left: 16px
+
+    &--right
+      .spice-content__text
+        padding-right: 16px
+        +align-self(flex-start)
+
+    &__text
+      width: auto
+      margin-right: 8px
+      margin-left: 8px
+      padding: 16px
+      background-color: $light
+      border: $border-style
+
+      &::after
+        display: none
+    
+    &__image
+      z-index: 2
+      opacity: .15
 
 .spice-table
   +flexbox
@@ -154,6 +233,17 @@ body
   &__title
     display: block
     margin-bottom: 16px
+  
+  +breakpoint(phone)
+    +flex-direction(column)
+
+    &__contact
+      margin-bottom: 32px
+
+.payment
+  +breakpoint(phone)
+    &__button
+      margin-bottom: 16px
 
 .modal
   +fixed($top: 0, $right: 0, $bottom: 0, $left: 0)
@@ -191,6 +281,13 @@ body
     .modal__wrapper
       transform: translateY(0)
       transition: transform 1s .8s ease
+  
+  +breakpoint(tablet)
+    &__wrapper
+      width: auto
+      max-height: auto
+      margin-top: 8px
+      margin-bottom: 8px
 
 .space-bottom-8
   margin-bottom: 8px
@@ -200,6 +297,12 @@ body
 
 .space-bottom-32
   margin-bottom: 32px
+
+.space-bottom-64
+  margin-bottom: 64px
+
+  +breakpoint(tablet)
+    margin-bottom: 32px
 
 .footer
   display: block
