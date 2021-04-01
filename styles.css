@@ -128,8 +128,11 @@ body {
   -webkit-font-smoothing: antialiased; }
 
 .header {
+  position: relative;
   text-align: center;
-  font-family: "Gishella", Helvetica, Tahoma, sans-serif; }
+  font-family: "Gishella", Helvetica, Tahoma, sans-serif;
+  width: 100vw;
+  overflow: hidden; }
   .header__plants {
     position: absolute;
     z-index: -1; }
@@ -306,6 +309,7 @@ body {
       width: auto;
       margin-right: 8px;
       margin-left: 8px;
+      margin-bottom: 32px;
       padding: 16px;
       background-color: #fff;
       border: 4px double #232323; }
