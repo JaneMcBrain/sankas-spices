@@ -12,6 +12,6 @@ This project is a simple webpage about spices made by a Sri Lankan family. This 
 
 ## SASS Setup
 1. npm install
-2. npm run-script compile-styles
+2. sass --watch styles.sass
 
 The CSS files will be compiled into the dist folder.
